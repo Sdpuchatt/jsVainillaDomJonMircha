@@ -97,3 +97,105 @@ function eliminarCadena(cadena, patron){
 }
 result9 = eliminarCadena("xyz1, xyz2, xyz3, xyz4 y xyz5","xyz");
 console.log(result9);
+
+/** 9) Programa una función que obtenga un numero aleatorio entre 501 y 600. */
+function numeroAleatorio(){
+    return Math.floor((Math.random()*100)+501);
+}
+console.log(numeroAleatorio());
+ /**10) Programa una función que reciba un número y evalúe si es capicúa o no 
+        (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.*/
+
+function esCapicua(numero){
+    let i = 0;
+    for(let i=0;i<numero.length;i++){
+        if(numero.charAt(i)!=numero.charAt(numero.length-1-i)){
+            return false;
+        }
+    }
+    return true;
+}   
+
+let result10 = esCapicua(2002);
+console.log(result10);
+/**    11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n,
+         se define como el producto de todos los números enteros positivos desde 1 hasta n), 
+        pe. miFuncion(5) devolverá 120.*/
+        
+function factorial(numero){
+    let factorial = 1;
+    for(let i = 1; i <= numero; i++){
+        factorial *= i;
+    }
+    return factorial;
+}
+
+let result11 = factorial(5);
+console.log(result11);
+
+/**
+ *  12) Programa una función que determine si un número es primo (aquel que solo 
+ *      es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+ */
+
+    function esPrimo(numero){
+        if( numero === 1){
+            return true;
+        }
+        for(let i=2;i<numero;i++){
+            if((numero % i) === 0){
+
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let result12 = esPrimo(7);
+    console.log(result12);
+ 
+/**
+ *    13) Programa una función que determine si un número es par o 
+ *      impar, pe. miFuncion(29) devolverá Impar.
+ */
+    function esPar(numero){
+        if(numero%2===0){
+            return "Par";
+        }else {
+            return "Impar"
+        }
+    }
+    let result13 = esPar(29);
+    console.log(result13);
+    result13 = esPar(4);
+    console.log(result13);
+
+/**
+ *    14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa,
+ *     pe. miFuncion(0,"C") devolverá 32°F.
+ * para convertir de celsius a fahrenheit Fórmula (1 °C × 9/5) + 32 = 33,8 °F
+ * para convertir de fahrenheit a celsius Fórmula(1 °F − 32) × 5/9 = -17,22 °C
+ */
+    function convertirTemperatura(grados, condicion){
+        condicion = condicion.toLowerCase();
+        if (condicion === 'c'){
+            return (grados * (9/5) +32);
+        }else if(condicion === 'f'){
+            return (grados -32 ) *5/9;
+        }
+    }
+    
+        let result14 = convertirTemperatura(0,"c");
+        console.log(result14);
+        result14 = convertirTemperatura(0,"f");
+        console.log(result14);
+
+/**
+ * 15) Programa una función para convertir números de base binaria a decimal y viceversa, 
+ *      pe. miFuncion(100,2) devolverá 4 base 10.
+   16) Programa una función que devuelva el monto final después de aplicar un descuento 
+        a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+   17) Programa una función que dada una fecha válida determine cuantos años han pasado 
+        hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+ * 
+ */
