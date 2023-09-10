@@ -42,7 +42,6 @@ console.log(result4);
 function invertirCadena(cadena) {
     let aux = "";
     cadena = cadena.trim();
-    console.log(aux);
     for(let i=1; i<=cadena.length;i++){
         aux += cadena[cadena.length-i];
         console.log(aux);
@@ -194,8 +193,32 @@ console.log(result11);
  * 15) Programa una función para convertir números de base binaria a decimal y viceversa, 
  *      pe. miFuncion(100,2) devolverá 4 base 10.
    16) Programa una función que devuelva el monto final después de aplicar un descuento 
-        a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
-   17) Programa una función que dada una fecha válida determine cuantos años han pasado 
-        hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
- * 
- */
+        a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800. */
+function aplicarDescuento(monto,descuento){
+    let montoADescontar = (monto*descuento)/100;;
+    return monto-montoADescontar;
+}
+
+let result15 = aplicarDescuento(1000, 20);
+console.log(result15);
+
+/**
+ * 17) Programa una función que dada una fecha válida determine cuantos años han pasado 
+        hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).*/
+
+function añosHastaHoy(fecha){
+    let hoy = new Date();
+    let fechaHoy = new Date(fecha);
+    let años = hoy.getFullYear()-fechaHoy.getFullYear();
+    return años;
+}
+let result17 = añosHastaHoy(new Date(1984,4,23));   
+console.log(result17);
+
+function contarEdad(fecha){
+    let hoy = new Date();
+    let nacimiento = new Date(fecha);
+    let edad = hoy.getFullYear()-nacimiento.getFullYear();
+    return edad;
+}
+console.log(contarEdad(new Date(1989,4,10)));
